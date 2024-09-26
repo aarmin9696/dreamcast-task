@@ -61,6 +61,13 @@ const UserTable = () => {
         </Modal.Body>
       </Modal>
       <div className="table-responsive">
+      {status === 'loading' ? (
+          <div className="d-flex justify-content-center align-items-center" style={{ height: '200px' }}>
+            <Spinner animation="border" role="status" style={{ color: "#e67e22" }}>
+              <span className="visually-hidden">Loading...</span>
+            </Spinner>
+          </div>
+        ) : (
       <Table className='table' striped hover>
         <thead>
           <tr>
@@ -94,6 +101,7 @@ const UserTable = () => {
   )}
 </tbody>
       </Table>
+      )}
       </div>
     </div>
   );
